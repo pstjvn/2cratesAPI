@@ -95,7 +95,7 @@ response:
       "id": 1
       "is_attached_to_wall": true,
       "description": "whatever",
-      "categoty_id": "1", //number 1 = up, 2 = down, 3 = up_corner, 4 = down_corner, 5 = two_row, 6 = two_row_corner, 7 = other
+      "categoty_id": 1, //number 1 = up, 2 = down, 3 = up_corner, 4 = down_corner, 5 = two_row, 6 = two_row_corner, 7 = other
       "width": 300,
       "width2": 400, // ignored for items that do not have second back wall.
       "height": 600,
