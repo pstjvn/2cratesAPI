@@ -69,7 +69,11 @@ client in order to unify the submission of data for storing a procjet on the
 backend.
 
 ```
-"top": [{"width": 300,"height": 550,"is_spacer": true}]
+"top": [{
+  "width": 300,
+  "height": 550,
+  "is_spacer": true
+}]
 ```
 
 Backend should be able to interpret this as 'new item' and perform insert in
@@ -81,6 +85,7 @@ the ID of the item.
 where N == kitchen project it, could be
 non-existing project id and could be omitted.
 response:
+
 ```
 {
   "status": "ok",
@@ -108,6 +113,8 @@ response:
 ```
 
 ### /getHandles
+
+```
 {
   "status": "ok",
   "errorCode": 0,
@@ -121,8 +128,11 @@ response:
     }
   ]
 }
+```
 
 ### /getFinishes
+
+```
 {
   "status": "ok",
   "errorCode": 0,
@@ -135,3 +145,4 @@ response:
     }
   ]
 }
+```
