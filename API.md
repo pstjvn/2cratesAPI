@@ -24,7 +24,7 @@ response:
   // for example user A trying to access kitchen that she does not own
   "kitchen": {
     "id": "1", //string - should always be present for consistency checks
-    "type": ?, // how do we use this?
+    "type": "I", //string - type can be I, L, or U
     "description": "", // string
     "pictures": ["path/to/picture"], // array of string, empty array is allowed
     "number_of_walls": 1, // number
