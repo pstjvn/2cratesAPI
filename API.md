@@ -101,7 +101,7 @@ response:
       "height": 600,
       "depts": 350,
       "front_picture": "path/to/picture",
-      "3d_picture": "path/to/picture",
+      "angle_picture": "path/to/picture",
       "has_top_board": true,
       "model_id": "23",
       "is_spacer": false,
