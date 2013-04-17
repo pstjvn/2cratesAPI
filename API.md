@@ -19,9 +19,9 @@ retrieving kitchn project by ID
 response:
 ```
 {
-  "status": "ok", // string, ok/fail
-  "errorCode": 0, // number, 0 == ok, > 0 == error with name.
+  "status": 0, // number, 0 == ok, > 0 == error with name.
   // for example user A trying to access kitchen that she does not own
+  // 1 = there is no project with this id
   "kitchen": {
     "id": "1", //string - should always be present for consistency checks
     "type": "I", //string - type can be I, L, or U
@@ -88,8 +88,7 @@ response:
 
 ```
 {
-  "status": "ok",
-  "errorCode": 0,
+  "status": 0,
   "items": [
     {
       "id": 1
@@ -116,8 +115,7 @@ response:
 
 ```
 {
-  "status": "ok",
-  "errorCode": 0,
+  "status": 0,
   "handles": [
     {
       "id": 1
@@ -134,8 +132,7 @@ response:
 
 ```
 {
-  "status": "ok",
-  "errorCode": 0,
+  "status": 0,
   "finishes": [
     {
       "id": 1
