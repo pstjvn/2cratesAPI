@@ -143,3 +143,17 @@ response:
   ]
 }
 ```
+
+### /getModels
+
+Should return the details for all models (mainly required for model names if required in UI).
+
+```
+{
+  "status": 0,
+  "models": [ {
+    "id": "1",
+    "name": "whatever"
+  } ]
+}
+```
