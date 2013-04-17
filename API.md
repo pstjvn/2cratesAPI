@@ -15,7 +15,9 @@ web app should be able to pick up the ID and load it from server via API call.
 
 ### /loadKitchen?kitchen_project_id=N
 
-retrieving kitchn project by ID
+retrieving kitchn project by ID. The included items are inlined as full records to shorten load time
+and improve working with spacers.
+
 response:
 ```
 {
@@ -39,21 +41,45 @@ response:
         "items": {
           "top": [
             {
-              "id": "1", // string, item id.
+              "id": 1
+              "is_attached_to_wall": true,
+              "description": "whatever",
+              "categoty_id": 1, //number 1 = up, 2 = down, 3 = up_corner, 4 = down_corner, 5 = two_row, 6 = two_row_corner, 7 = other
+              "width": 300,
+              "width2": 400, // ignored for items that do not have second back wall.
+              "height": 600,
+              "depth": 350,
+              "front_picture": "path/to/picture",
+              "angle_picture": "path/to/picture",
+              "has_top_board": true,
+              "model_id": "23",
+              "is_spacer": false,
+              "price": 3500, // number, AU * 100 to avoid floating point arythmetics.
+              "required_handles": 0, // not sure for this, how do we calculate price for handles?
             },
             {
               // this is a spacer, the ID matches the spacer identificator, we
               // should have received the ID with the list of items!!! for this
               // to work saving project should take special care to iterate
               // items that are marked as spacers.
-              "id": "231"
+              "id": 0, // Zero is allowed only for spacers and should be ignored
+              "is_attached_to_wall": true, // defaults
+              "description": "default", // defaults
+              "categoty_id": 1, //defaults, should be set by client logic.
+              "width": 300,
+              "width2": 400, // ignored for items that do not have second back wall.
+              "height": 600,
+              "depth": 350, // irrelevant
+              "front_picture": "path/to/picture", // irrelevant
+              "angle_picture": "path/to/picture", // irrelevant
+              "has_top_board": false, // irrelevant
+              "model_id": "0", // ifrrelevant
+              "is_spacer": true, // should always be true for spacers
+              "price": 0, // irrelevant
+              "required_handles": 0, // irrelevant
             }
           ],
-          "bottom": [
-            {
-              "id": "17"
-            }
-          ]
+          "bottom": []
         }
       }
     ]
@@ -62,23 +88,9 @@ response:
 ```
 ### /saveKitchen
 
-same as above package except for new spacers. example: I am open to
-sugestions here if you know way to make this easier to process on the
-backend, for example requestig an ID each time the item is altered at the
-client in order to unify the submission of data for storing a procjet on the
-backend.
+Same as loadKitchen. Format is exactly the same, if a kitchen is loaded and withou
+changes saved the payload should be exactly the same. POST method is used to send the payload.
 
-```
-"top": [{
-  "width": 300,
-  "height": 550,
-  "is_spacer": true
-}]
-```
-
-Backend should be able to interpret this as 'new item' and perform insert in
-items if needed (no width/height matching the item are found) and write only
-the ID of the item.
 
 ### /getItems?kitchen_project_id=N
 
