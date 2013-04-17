@@ -99,7 +99,7 @@ response:
       "width": 300,
       "width2": 400, // ignored for items that do not have second back wall.
       "height": 600,
-      "depts": 350,
+      "depth": 350,
       "front_picture": "path/to/picture",
       "angle_picture": "path/to/picture",
       "has_top_board": true,
