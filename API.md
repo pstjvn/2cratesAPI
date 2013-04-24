@@ -31,7 +31,7 @@ response:
     "pictures": ["path/to/picture"], // array of string, empty array is allowed
     "number_of_walls": 1, // number
     "handles_id": "1", // string
-    "finish": "1", // string, the ID of the finish to apply
+    "finish_id": "1", // string, the ID of the finish to apply
     "walls": [
       {
         "id": "1", // string (not sure if we need it yet)
