@@ -92,10 +92,8 @@ Same as loadKitchen. Format is exactly the same, if a kitchen is loaded and with
 changes saved the payload should be exactly the same. POST method is used to send the payload.
 
 
-### /getItems?kitchen_project_id=N
+### /getItems
 
-where N == kitchen project it, could be
-non-existing project id and could be omitted.
 response:
 
 ```
