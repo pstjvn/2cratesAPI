@@ -167,3 +167,14 @@ Should return the details for all models (mainly required for model names if req
   } ]
 }
 ```
+
+
+### Errors and error text
+
+HTTP errors
+5xx, 4xx - Server expriences temporary difficulties, please try later. 
+
+JSON errors
+parse error - We are experiencing temporary difficulties, please try agin later.
+
+Status errors
