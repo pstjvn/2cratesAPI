@@ -91,6 +91,69 @@ response:
 Same as loadKitchen. Format is exactly the same, if a kitchen is loaded and withou
 changes saved the payload should be exactly the same. POST method is used to send the payload.
 
+```
+{
+    "id": "1", //string - should always be present for consistency checks
+    "type": "I", //string - type can be I, L, or U
+    "description": "", // string
+    "pictures": ["path/to/picture"], // array of string, empty array is allowed
+    "number_of_walls": 1, // number
+    "handles_id": "1", // string
+    "finish_id": "1", // string, the ID of the finish to apply
+    "walls": [
+      {
+        "id": "1", // string (not sure if we need it yet)
+        "width": 4000, // number, max width of the kitchen
+        "is_attached_to_wall": true, // boolean
+        "height": 2500, // number, for now it is a constant
+        "items": {
+          "top": [
+            {
+              "id": 1
+              "is_attached_to_wall": true,
+              "description": "whatever",
+              "categoty_id": 1, //number 1 = up, 2 = down, 3 = up_corner, 4 = down_corner, 5 = two_row, 6 = two_row_corner, 7 = other
+              "width": 300,
+              "width2": 400, // ignored for items that do not have second back wall.
+              "height": 600,
+              "depth": 350,
+              "front_picture": "path/to/picture",
+              "angle_picture": "path/to/picture",
+              "has_top_board": true,
+              "model_id": "23",
+              "is_spacer": false,
+              "price": 3500, // number, AU * 100 to avoid floating point arythmetics.
+              "required_handles": 0, // not sure for this, how do we calculate price for handles?
+            },
+            {
+              // this is a spacer, the ID matches the spacer identificator, we
+              // should have received the ID with the list of items!!! for this
+              // to work saving project should take special care to iterate
+              // items that are marked as spacers.
+              "id": 0, // Zero is allowed only for spacers and should be ignored
+              "is_attached_to_wall": true, // defaults
+              "description": "default", // defaults
+              "categoty_id": 1, //defaults, should be set by client logic.
+              "width": 300,
+              "width2": 400, // ignored for items that do not have second back wall.
+              "height": 600,
+              "depth": 350, // irrelevant
+              "front_picture": "path/to/picture", // irrelevant
+              "angle_picture": "path/to/picture", // irrelevant
+              "has_top_board": false, // irrelevant
+              "model_id": "0", // ifrrelevant
+              "is_spacer": true, // should always be true for spacers
+              "price": 0, // irrelevant
+              "required_handles": 0, // irrelevant
+            }
+          ],
+          "bottom": []
+        }
+      }
+    ]
+  }
+```
+
 
 ### /getItems
 
