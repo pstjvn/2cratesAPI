@@ -254,6 +254,6 @@ JSON errors
   {status: 0, message: "", data: {}}
   
  -save data: 
-  {status: 0, message: ""}
+  {status: 5, message: "some error"}
   
 Status errors
