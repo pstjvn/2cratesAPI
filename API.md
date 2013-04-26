@@ -12,6 +12,20 @@ web app should be able to pick up the ID and load it from server via API call.
 * for all boolean values only true/false are allowed
 * for all arrays empty array is allowed
 
+### Create a new project.
+
+New project is created by linking to a page allowing configuration of basic kitchen parameters.
+The following parameters are used:
+
+type=L // I, L, U
+walls=2 // number of walls (can be deducted from type)
+desc=whatever // Optional description for the project
+attributes=w,h,a,... // array of wall settings,
+  ( walls*3 number of items, 3 params for wach wall, width, height, attached).
+
+Params are submitted as GET request with the data url encoded in the URI.
+
+The backend should create the project and redirect to the design tool URL with kitchen_project_id filled in.
 
 ### /loadKitchen?kitchen_project_id=N
 
