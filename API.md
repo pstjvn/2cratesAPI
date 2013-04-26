@@ -24,7 +24,7 @@ response:
   "status": 0, // number, 0 == ok, > 0 == error with name.
   // for example user A trying to access kitchen that she does not own
   // 1 = there is no project with this id
-  "kitchen": {
+  "data": {
     "id": "1", //string - should always be present for consistency checks
     "type": "I", //string - type can be I, L, or U
     "description": "", // string
@@ -99,7 +99,7 @@ response:
 ```
 {
   "status": 0,
-  "items": [
+  "data": [
     {
       "id": 1
       "is_attached_to_wall": true,
@@ -126,7 +126,7 @@ response:
 ```
 {
   "status": 0,
-  "handles": [
+  "data": [
     {
       "id": 1
       "description": "whatever",
@@ -143,7 +143,7 @@ response:
 ```
 {
   "status": 0,
-  "finishes": [
+  "data": [
     {
       "id": 1
       "description": "whatever",
@@ -161,7 +161,7 @@ Should return the details for all models (mainly required for model names if req
 ```
 {
   "status": 0,
-  "models": [ {
+  "data": [ {
     "id": "1",
     "name": "whatever"
   } ]
