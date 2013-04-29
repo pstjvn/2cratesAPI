@@ -257,10 +257,17 @@ JSON errors
 Status errors
 
 1 - cannot create new item for given wall id
+
 2 - cannot create new spacer
+
 3 - cannot update wall(s) data
+
 4 - cannot update kitchen project
+
 5 - data not sent
+
 6 - there is no project with this id
+
 7 - can't load project pictures
+
 8 - can't load wall(s) data
