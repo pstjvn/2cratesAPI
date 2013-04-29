@@ -271,3 +271,11 @@ Status errors
 7 - can't load project pictures
 
 8 - can't load wall(s) data
+
+9 - can't load finishes
+
+10 - can't load handles
+
+11 - can't load items
+
+12 - can't load item models
