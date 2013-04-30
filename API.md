@@ -284,7 +284,7 @@ Status errors
 
 14 - project is not created
 
-Item categories
+### Item categories
 
 1 - up
 
