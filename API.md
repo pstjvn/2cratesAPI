@@ -279,3 +279,7 @@ Status errors
 11 - can't load items
 
 12 - can't load item models
+
+13 - this user have too many projects
+
+14 - project is not created
