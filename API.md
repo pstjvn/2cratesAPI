@@ -17,11 +17,10 @@ web app should be able to pick up the ID and load it from server via API call.
 New project is created by linking to a page allowing configuration of basic kitchen parameters.
 The following parameters are used:
 
-type=L // I, L, U
-walls=2 // number of walls (can be deducted from type)
-desc=whatever // Optional description for the project
-attributes=w,h,a,... // array of wall settings,
-  ( walls*3 number of items, 3 params for wach wall, width, height, attached).
+* type=L // I, L, U
+* walls=2 // number of walls (can be deducted from type)
+* desc=whatever // Optional, description for the project
+* attributes=w,h,a,... // array of wall settings, ( walls*3 number of items, 3 params for wach wall, width, height, attached).
 
 Params are submitted as GET request with the data url encoded in the URI.
 
