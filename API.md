@@ -283,3 +283,19 @@ Status errors
 13 - this user have too many projects
 
 14 - project is not created
+
+Item categories
+
+1 - up
+
+2 - down
+
+3 - up_corner
+
+4 - down_corner
+
+5 - two_row
+
+6 - two_row_corner
+
+7 - other
