@@ -223,7 +223,8 @@ response:
     {
       "id": 1
       "description": "whatever",
-      "picture": "path"
+      "picture": "path",
+      "color": "#dddddd",
       "price": 2300
     }
   ]
