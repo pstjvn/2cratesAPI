@@ -260,7 +260,7 @@ Status errors
 
 2 - cannot create new spacer
 
-3 - cannot update wall(s) data
+3 - there is no such wall id
 
 4 - cannot update kitchen project
 
