@@ -284,6 +284,10 @@ Status errors
 
 14 - project is not created
 
+15 - the attributes are not 3, 6 or 9
+
+16 - cannot update item id for given position
+
 ### Item categories
 
 1 - up
