@@ -182,7 +182,17 @@ changes saved the payload should be exactly the same. POST method is used to sen
               "model_id": "0", // ifrrelevant
               "is_spacer": true, // should always be true for spacers
               "price": 0, // irrelevant
-              "required_handles": 0, // irrelevant
+              "required_handles": 0,
+              "is_secondary": true
+              // flag: if it is true, then this item is cloned corner item that was initially mapped onto
+              // the previous wall. The secondary width will be used in calculations and the price of this
+              // items should not be included in price sum. the item cannot be moved from the current
+              // wall (i.e. handle it in movement) and cannot be edited (i.e. ItemView editing) nor deleted,
+              // the flag means basically 'could not touch this item'. On the other hand editing the
+              // original (i.e. deleting, updating) should update this record as well. Becasue of
+              // this up to one corner item is allowed per row per wall. All corner items that are
+              // not clones MUST be the last on the row, all corner items that are clones MUST be
+              // the first on the corresponding row. This should be accounted for in movement.
             }
           ],
           "bottom": []
@@ -276,9 +286,9 @@ Should return the details for all models (mainly required for model names if req
 JSON errors
 
   {status: 0, message: "", data: {}}
-  
+
   {status: 5, message: "some error"}
-  
+
 Status errors
 
 1 - cannot create new item for given wall id
