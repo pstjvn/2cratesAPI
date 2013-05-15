@@ -25,6 +25,9 @@ The following parameters are used:
 Params are submitted as GET request with the data url encoded in the URI.
 
 The backend should create the project and redirect to the design tool URL with kitchen_project_id filled in.
+The backend should create all walls and all corners for the project. Corners count should be wall count - 1. If only one 
+wall is created, the corners array should be empty but present.
+Corner array contains record type with top and bottom properties, each can contain only one item.
 
 ### /loadKitchen?kitchen_project_id=N
 
@@ -45,6 +48,28 @@ response:
     "number_of_walls": 1, // number
     "handles_id": "1", // string
     "finish_id": "1", // string, the ID of the finish to apply
+    "corners": [ // corners.length == walls.length - 1
+      {
+        "top": null, // if no corner item is existing, use null and check for null (some implementations omit serialization!!!)
+        "bottom": {
+          "id": 1
+          "is_attached_to_wall": true,
+          "description": "whatever",
+          "categoty_id": 4, // down corner
+          "width": 300,
+          "width2": 400, // used on the secondary wall ( wall 2 because it sits on the first corner)
+          "height": 600,
+          "depth": 350,
+          "front_picture": "path/to/picture",
+          "angle_picture": "path/to/picture",
+          "has_top_board": true,
+          "model_id": "23",
+          "is_spacer": false,
+          "price": 3500, // number, AU * 100 to avoid floating point arythmetics.
+          "required_handles": 2, 
+        }
+      }
+    ],
     "walls": [
       {
         "id": "1", // string (not sure if we need it yet)
