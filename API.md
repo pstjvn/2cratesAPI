@@ -325,6 +325,8 @@ Status errors
 
 17 - item category id and sent category do not match
 
+18 - this user is not registered
+
 ### Item categories
 
 1 - up
