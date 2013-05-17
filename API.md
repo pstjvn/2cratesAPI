@@ -323,6 +323,8 @@ Status errors
 
 16 - cannot update item id for given position
 
+17 - item category id and sent category do not match
+
 ### Item categories
 
 1 - up
