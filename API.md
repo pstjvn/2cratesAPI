@@ -325,6 +325,12 @@ Status errors
 
 17 - item category id and sent category do not match
 
+18 - this user already have 5 projects
+
+19 - this project is already saved
+
+20 - this user is not registered
+
 ### Item categories
 
 1 - up
