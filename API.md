@@ -331,6 +331,8 @@ Status errors
 
 20 - this user is not registered
 
+21 - project is not created by this user
+
 ### Item categories
 
 1 - up
